@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Web Frameworks</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Enterprise Web Frameworks</p>
+      <h1>Posts and Users</h1>
+      <p class="intro">A small frontend connected to an Express API and MongoDB.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Browse data</h2>
+      <div class="button-row">
+        <button id="loadPosts" type="button">Load Posts</button>
+        <button id="loadUsers" type="button" class="secondary">Load Users</button>
+      </div>
+      <h3>Posts</h3>
+      <div id="posts" aria-live="polite">Click Load Posts to retrieve posts.</div>
+      <h3>Users</h3>
+      <div id="users" aria-live="polite">Click Load Users to retrieve users.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Create a new post</h2>
+      <form id="postForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" min="1" max="150" required>
+
+        <label for="createdBy">Created by (optional)</label>
+        <select id="createdBy" name="createdBy">
+          <option value="">No user selected</option>
+        </select>
+
+        <button type="submit">Create Post</button>
+        <p id="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Register a user</h2>
+      <form id="registerForm">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required minlength="6">
+        <button type="submit">Register User</button>
+        <p id="userMessage" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
